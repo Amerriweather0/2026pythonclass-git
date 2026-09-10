@@ -1,0 +1,39 @@
+1.
+p0 = float(input("Enter the initial investment: "))
+t = float(input("Enter the number of years: "))
+r = float(input("Enter the annual interest rate as a decimal: "))
+pt = p0 * math.exp(r * t)
+print("The final investment value is:", pt)
+
+2.
+d = float(input("Enter the amount deposited each month: "))
+r = float(input("Enter the annual interest rate as a decimal: "))
+k = 12
+p24 = d * (((1 + r / k) ** (24 * k) - 1) / (r / k))
+print("The final balance is:", p24)
+
+3.
+p24 = float(input("Enter the amount needed for the downpayment: "))
+r = float(input("Enter the annual interest rate as a decimal: "))
+k = 12
+d = p24 * (r / k) / ((1 + r / k) ** (24 * k) - 1)
+print("The amount to deposit each month is:", d)
+
+4.
+p0 = float(input("Enter the amount you want to borrow: "))
+r = float(input("Enter the annual interest rate as a decimal: "))
+N = float(input("Enter the term of the loan in years: "))
+k = 12
+d = p0 / ((1 - (1 + r / k) ** (-N * k)) / (r / k))
+print("The monthly payment is:", d)
+
+5.
+r = float(input("Enter the annual interest rate as a decimal: "))
+d = float(input("Enter the maximum monthly payment you can afford: "))
+k = 12
+N = 15
+p0_15 = d * ((1 - (1 + r / k) ** (-N * k)) / (r / k))
+N = 30
+p0_30 = d * ((1 - (1 + r / k) ** (-N * k)) / (r / k))
+print("Amount you can afford with a 15-year mortgage:", p0_15)
+print("Amount you can afford with a 30-year mortgage:", p0_30)
